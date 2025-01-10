@@ -51,7 +51,8 @@ def parse_data():
    
 
 def student(query):
-    pass
+    for lst in student_map[query[1]]:
+        print(lst[2], lst[3], lst[6], lst[7])
     
 def teacher(query):
     for lst in teacher_map[query[1]]:
