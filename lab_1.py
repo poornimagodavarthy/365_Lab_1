@@ -2,13 +2,14 @@ student_map, teacher_map, bus_route, grade_map = {}, {}, {}, {}
 
 def user_input():
     query = input("Enter query: ").strip().split()
+    print(query)
     while query:
         if query[0].startswith("S"):
             student(query)
         elif query[0].startswith("T"):
             teacher(query)
         elif query[0].startswith("B"):
-            break
+            bus(query)
         elif query[0].startswith("G"):
             break
         elif query[0].startswith("A"):
@@ -19,7 +20,7 @@ def user_input():
             break
         else:
             print("Invalid Query, please try again")
-        query = input("Enter query: ").strip()
+        query = input("Enter query: ").strip().split()
 
 def parse_data():
     #read each instance to hashmap
@@ -51,27 +52,34 @@ def parse_data():
    
 
 def student(query):
-    for lst in student_map[query[1]]:
-        print(lst[2], lst[3], lst[6], lst[7])
+    if len(query) > 2:
+        if query[2].startswith("B"):
+            for lst in student_map[query[1]]:
+                print(lst[0], lst[1], lst[4])
+        else:
+            print("Invalid Query, please try again")
+            return
+    else:
+        for lst in student_map[query[1]]:
+            print(lst[0], lst[1], lst[2], lst[3], lst[6], lst[7])
+
     
 def teacher(query):
     for lst in teacher_map[query[1]]:
-        print(lst[1], lst[0])
+        print(lst[0], lst[1])
 
 def grade(query):
     pass
 
 def bus(query):
-    pass
+    for lst in bus_route[query[1]]:
+        print(lst[0], lst[1], lst[4])
 
 
 def main():
     parse_data()
+    print(teacher_map)
     user_input()
 
 if __name__ == "__main__":
     main()
-
-
-
-    
