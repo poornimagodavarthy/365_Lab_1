@@ -2,7 +2,6 @@ student_map, teacher_map, bus_route, grade_map = {}, {}, {}, {}
 
 def user_input():
     query = input("Enter query: ").strip().split()
-    print(query)
     while query:
         if query[0].startswith("S"):
             student(query)
@@ -28,7 +27,6 @@ def parse_data():
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip().split(',')
-
             if line[0] not in student_map:
                 student_map[line[0]] = [line]
             else:
@@ -78,7 +76,6 @@ def bus(query):
 
 def main():
     parse_data()
-    print(teacher_map)
     user_input()
 
 if __name__ == "__main__":
