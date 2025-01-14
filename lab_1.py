@@ -51,65 +51,79 @@ def parse_data():
    
 
 def student(query):
-    if len(query) > 2:
-        if query[2].startswith("B"):
-            for lst in student_map[query[1]]:
-                print(lst[0], lst[1], lst[4])
+    if query[1] in student_map:
+        if len(query) > 2:
+            if query[2].startswith("B"):
+                for lst in student_map[query[1]]:
+                    print(lst[0], lst[1], lst[4])
+            else:
+                print("Invalid Query, please try again")
+                return
         else:
-            print("Invalid Query, please try again")
-            return
+            for lst in student_map[query[1]]:
+                print(lst[0], lst[1], lst[2], lst[3], lst[6], lst[7])
     else:
-        for lst in student_map[query[1]]:
-            print(lst[0], lst[1], lst[2], lst[3], lst[6], lst[7])
+        print("No student found")
 
     
 def teacher(query):
-    for lst in teacher_map[query[1]]:
-        print(lst[0], lst[1])
+    if query[1] in teacher_map:
+        for lst in teacher_map[query[1]]:
+            print(lst[0], lst[1])
+    else:
+        print("No teacher found")
 
 
 def grade(query):
+    if query[1] in grade_map:
+        if len(query) > 2:
+            if query[2].startswith("H"):
+                cur_gpa = grade_map[query[1]][0][5]
+                cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
+                for lst in grade_map[query[1]]:
+                    if lst[5] > cur_gpa:
+                        cur_gpa = lst[5]
+                        cur_student = [lst[0], lst[1]]
+                print(cur_student[0], cur_student[1])
 
-    if len(query) > 2:
-        if query[2].startswith("H"):
-            cur_gpa = grade_map[query[1]][0][5]
-            cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
-            for lst in grade_map[query[1]]:
-                if lst[5] > cur_gpa:
-                    cur_gpa = lst[5]
-                    cur_student = [lst[0], lst[1]]
-            print(cur_student[0], cur_student[1])
+            elif query[2].startswith("L"):
+                cur_gpa = grade_map[query[1]][0][5]
+                cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
+                for lst in grade_map[query[1]]:
+                    if lst[5] < cur_gpa:
+                        cur_gpa = lst[5]
+                        cur_student = [lst[0], lst[1]]
+                print(cur_student[0], cur_student[1])
 
-        elif query[2].startswith("L"):
-            cur_gpa = grade_map[query[1]][0][5]
-            cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
-            for lst in grade_map[query[1]]:
-                if lst[5] < cur_gpa:
-                    cur_gpa = lst[5]
-                    cur_student = [lst[0], lst[1]]
-            print(cur_student[0], cur_student[1])
-
+            else:
+                print("Invalid Query, please try again")
+                return
+            
         else:
-            print("Invalid Query, please try again")
-            return
-        
+            for lst in grade_map[query[1]]:
+                print(lst[0], lst[1])
     else:
-        for lst in grade_map[query[1]]:
-            print(lst[0], lst[1])
+        print("No data for grade")
 
 
 def bus(query):
-    for lst in bus_route[query[1]]:
-        print(lst[0], lst[1], lst[4])
+    if query[1] in bus_route:
+        for lst in bus_route[query[1]]:
+            print(lst[0], lst[1], lst[4])
+    else:
+        print("No students found for bus route")
 
 
 def average(query):
     sum_gpa = 0
     count_gpa = 0
-    for lst in grade_map[query[1]]:
-        sum_gpa += float(lst[5])
-        count_gpa += 1
-    print(sum_gpa/count_gpa)
+    if query[1] in grade_map:
+        for lst in grade_map[query[1]]:
+            sum_gpa += float(lst[5])
+            count_gpa += 1
+        print(sum_gpa/count_gpa)
+    else:
+        print("No data for grade")
 
 
 def info():

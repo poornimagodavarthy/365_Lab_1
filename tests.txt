@@ -1,0 +1,142 @@
+// CSC 365 
+//Lab 1-a test suite
+// Team Members: Poornima Godavarthy, Nidhi Raviprasad, Arya Ramchander
+
+//TC-1
+// Tests Requirements R3, R4
+// Description: Valid query for an existing student by last name.
+// expected output: STERBACK PETER 6 111 NISTENDIRK NANCY
+S: STERBACK
+
+// TC-2
+// Tests Requirements R3, R4
+// tests non existing student
+// expected output: No student found
+S: DORY
+
+// TC-3
+// Tests Requirments R3, R12
+// quit command
+// expected output: Program terminates
+Q
+
+// TC-4
+// Tests Requirements R3, R11
+// Description: For each grade, get number of students
+// expected output: 
+    // 0: 0
+    // 1: 2
+    // 2: 13
+    // 3: 9
+    // 4: 15
+    // 5: 0
+    // 6: 21
+I
+
+// TC-5
+// Tests Requirements R3, R5
+// Description: get last name, first name and the bus route the student takes
+// expected output: LIBRANDI TODD 51
+
+S: LIBRANDI B
+
+// TC-6
+// Tests Requirements R3, R6
+// Description: Get students for teacher
+// expected output: 
+    // WORBINGTON DEEDRA
+    // SPANICEK KENDRA
+    // GUICE CODI
+    // GLOR HUNG
+    // GUM NOAH
+    // NOVICK ROLLAND
+    // DELUNA KRYSTAL
+    // COMO ZANDRA
+
+T: CHIONCHIO
+
+// TC-8
+// Tests Requirements R3, R8
+// Description: Return students and bus route
+// expected output: 
+    // SCHOENECKER PHUONG 0
+    // FINCHMAN MATHILDA 0
+    // BRODERSEN HYE 0
+    // HAVIR BOBBIE 0
+    // MASSART ELDON 0
+    // GARTH JOHN 0
+    // CREMEANS RANDOLPH 0
+    // KREESE CARRIE 0
+
+B: 0
+
+// TC-9
+// Tests Requirements R3, R4
+// Description: Handle invalid queries
+// expected output: Invalid Query, please try again
+
+X: INVALID  
+
+// TC-10
+// Tests Requirements R3, R4
+// Description: Handle case insensitivity
+// expected output: Invalid Query, please try again
+
+s: STERBACK  
+
+// TC-11
+// Tests Requirements R3, R6
+// Description: No teacher found 
+// expected output: No teacher found
+
+T: NONEXISTENT 
+
+// TC-12
+// Tests Requirements R3, R7
+// Description: Return students in grade
+// expected output: 
+    // CORKER CARTER
+    // IMMERMAN DEVIN
+    // RAPOSE ALONZO
+    // WORBINGTON DEEDRA
+    // OGAS ERVIN
+    // SPANICEK KENDRA
+    // GUICE CODI
+    // GLOR HUNG
+    // GUM NOAH
+    // MASSART ELDON
+    // NOVICK ROLLAND
+    // DURAND CARLEE
+    // BEX TAMESHA
+    // DELUNA KRYSTAL
+    // COMO ZANDRA
+
+G: 4
+
+// TC-13
+// Tests Requirements R3, R7
+// Description: Invalid grade
+// expected output: No data for grade
+
+G: 11.1
+
+// TC-14
+// Tests Requirements R3, R9
+// Description: Student with high grade
+// expected output: CORKER CARTER
+
+G: 4 H
+
+// TC-15
+// Tests Requirements R3, R9
+// Description: Student with low grade
+// expected output: KRAKE VALENTIN
+
+G: 6 L
+
+// TC-16
+// Tests Requirements R3, R10
+// Description: Returns Avg GPA in grade
+// expected output: 3.048888888888889
+
+A: 3
