@@ -1,16 +1,14 @@
-##CSC 365 Lab 1-a
-Team Members
-Poornima Godavarthy
-Nidhi Raviprasad
-Arya Ramchander
+# **CSC 365 Lab 1-a**
 
-Compilation Instructions:
-python lab_1.py to run program
+## **Team Members**
+- Poornima Godavarthy  
+- Nidhi Raviprasad  
+- Arya Ramchander  
 
-Execution Instructions:
-Query student by last name:
-S: LASTNAME
+---
 
-Query teacher:
-T: TEACHERNAME
+## **Compilation Instructions**
+To run the program, execute the following command:  
+```bash
+python lab_1.py
 
