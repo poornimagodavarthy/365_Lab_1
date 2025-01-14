@@ -8,7 +8,10 @@
 ---
 
 ## **Compilation Instructions**
-To run the program, execute the following command:  
-```bash
+To run the program:  
 python lab_1.py
+
+## **Execution Instructions**
+- Query Student by Last Name:
+  S: LASTNAME
 
