@@ -79,21 +79,27 @@ def grade(query):
         if len(query) > 2:
             if query[2].startswith("H"):
                 cur_gpa = grade_map[query[1]][0][5]
-                cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
+                cur_student = []
                 for lst in grade_map[query[1]]:
                     if lst[5] > cur_gpa:
                         cur_gpa = lst[5]
-                        cur_student = [lst[0], lst[1]]
-                print(cur_student[0], cur_student[1])
+                        cur_student = [[lst[0], lst[1]]]
+                    elif lst[5] == cur_gpa:
+                        cur_student.append([lst[0], lst[1]])
+                for student in cur_student:
+                    print(student[0], student[1])
 
             elif query[2].startswith("L"):
                 cur_gpa = grade_map[query[1]][0][5]
-                cur_student = [grade_map[query[1]][0][0], grade_map[query[1]][0][1]]
+                cur_student = []
                 for lst in grade_map[query[1]]:
                     if lst[5] < cur_gpa:
                         cur_gpa = lst[5]
-                        cur_student = [lst[0], lst[1]]
-                print(cur_student[0], cur_student[1])
+                        cur_student = [[lst[0], lst[1]]]
+                    elif lst[5] == cur_gpa:
+                        cur_student.append([lst[0], lst[1]])
+                for student in cur_student:
+                    print(student[0], student[1])
 
             else:
                 print("Invalid Query, please try again")
