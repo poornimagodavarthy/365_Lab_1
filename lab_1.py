@@ -115,7 +115,7 @@ def grade(query):
 def bus(query):
     if query[1] in bus_route:
         for lst in bus_route[query[1]]:
-            print(lst[0], lst[1], lst[4])
+            print(lst[0], lst[1], lst[2], lst[3])
     else:
         print("No students found for bus route")
 
