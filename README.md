@@ -13,19 +13,19 @@ python lab_1.py
 
 ## **Execution Instructions**
 - Query Student by Last Name:
-  S <LASTNAME>
+  S: <LASTNAME>
   or
-  Student <LASTNAME>
+  Student: <LASTNAME>
 - Query Teacher by Last Name:
-  T <LASTNAME>
+  T: <LASTNAME>
   or
-  Teacher <LASTNAME>
+  Teacher: <LASTNAME>
 - Query by Grade:
-  G <GRADE>
+  G: <GRADE>
   or
-  Grade <GRADE>
+  Grade: <GRADE>
 - Query by Bus Route:
-  B <BUSROUTE>
+  B: <BUSROUTE>
   or
-  Bus <BUSROUTE>
+  Bus: <BUSROUTE>
 
