@@ -140,3 +140,62 @@ G: 6 L
 // expected output: 3.048888888888889
 
 A: 3
+
+// TC-17
+// Tests Requirements R3, R9
+// Description: Student with high grade
+// expected output: 
+    // CORKER CARTER
+    // RAPOSE ALONZO
+
+G: 4 H
+
+// TC-18
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Sx
+
+// TC-19
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Tx
+
+// TC-20
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Bx
+
+// TC-21
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Gx
+
+// TC-22
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Ax
+
+// TC-23
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Ix
+
+// TC-24
+// Tests Requirements R3, E1
+// Description: Handle invalid query
+// Expected output: Invalid Query, please try again
+
+Qx
+

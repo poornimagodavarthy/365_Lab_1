@@ -3,19 +3,19 @@ student_map, teacher_map, bus_route, grade_map = {}, {}, {}, {}
 def user_input():
     query = input("Enter query: ").strip().split(' ')
     while query:
-        if query[0].startswith("S"):
+        if query[0] == "S:" or query[0] == "Student:":
             student(query)
-        elif query[0].startswith("T"):
+        elif query[0] == "T:" or query[0] == "Teacher:":
             teacher(query)
-        elif query[0].startswith("B"):
+        elif query[0] == "B:" or query[0] == "Bus:":
             bus(query)
-        elif query[0].startswith("G"):
+        elif query[0] == "G:" or query[0] == "Grade:":
             grade(query)
-        elif query[0].startswith("A"):
+        elif query[0] == "A:" or query[0] == "Average:":
             average(query)
-        elif query[0].startswith("I"):
+        elif query[0] == "I:" or query[0] == "Info:":
             info()
-        elif query[0].startswith("Q"):
+        elif query[0] == "Q:" or query[0] == "Quit:":
             break
         else:
             print("Invalid Query, please try again")
@@ -53,7 +53,7 @@ def parse_data():
 def student(query):
     if query[1] in student_map:
         if len(query) > 2:
-            if query[2].startswith("B"):
+            if query[2] == "B" or query[2] == "Bus":
                 for lst in student_map[query[1]]:
                     print(lst[0], lst[1], lst[4])
             else:
@@ -77,7 +77,7 @@ def teacher(query):
 def grade(query):
     if query[1] in grade_map:
         if len(query) > 2:
-            if query[2].startswith("H"):
+            if query[2] == "H" or query[2] == "High":
                 cur_gpa = grade_map[query[1]][0][5]
                 cur_student = []
                 for lst in grade_map[query[1]]:
@@ -89,7 +89,7 @@ def grade(query):
                 for student in cur_student:
                     print(student[0], student[1])
 
-            elif query[2].startswith("L"):
+            elif query[2] == "L" or query[2] == "Low":
                 cur_gpa = grade_map[query[1]][0][5]
                 cur_student = []
                 for lst in grade_map[query[1]]:
